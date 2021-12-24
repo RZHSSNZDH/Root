@@ -1,4 +1,4 @@
-from math import *
+from math import pow
 from sys import argv
 
 num = int(argv[1])
