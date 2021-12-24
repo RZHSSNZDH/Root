@@ -37,8 +37,8 @@ if num<0:
     if grid%2==0:
         print("Negative number can't have even grid")
     else:
-        print((-1)*root((-1)*num, grid, decimals))
+        print(round((-1)*root((-1)*num, grid, decimals), decimals))
 elif num>0:
-    print(root(num, grid, decimals))
+    print(round(root(num, grid, decimals), decimals))
 else:
     print(0)
