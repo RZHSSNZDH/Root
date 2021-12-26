@@ -1,26 +1,27 @@
 from math import pow
 from sys import argv, exit
 
-if len(argv) not in [4, 3]:
+if len(argv) not in [4, 3]:                     # If parameters are fewer than 2 and more than 3
     print("You should pass 2 or 3 parameters")
     exit()
 
 num = int(argv[1])
 grid = int(argv[2])
 
-try:
+try:                                            # If user does not pass decimals parameter
     decimals = int(argv[3])
 except IndexError:
     decimals = 1
 
 def root(num, grid, decimals):
     checks = []
-    i = 0
+    i = 0                                       # Itering variable
     coefficient=1
     final=0
-    current_decimal = -1
+    current_decimal = -1                        # Number of current calculating decimal (-1)
 
     while current_decimal!=decimals:
+
         if pow((final+coefficient*i), grid)>num and i not in checks:
             final += coefficient*checks[-1]
             coefficient = coefficient/10
