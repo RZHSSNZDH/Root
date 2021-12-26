@@ -1,11 +1,19 @@
 from math import pow
-from sys import argv
+from sys import argv, exit
+
+if len(argv) not in [4, 3]:
+    print("You should pass 2 or 3 parameters")
+    exit()
 
 num = int(argv[1])
 grid = int(argv[2])
-decimals = int(argv[3])
 
-def root(num, grid, decimals=1):
+try:
+    decimals = int(argv[3])
+except IndexError:
+    decimals = 1
+
+def root(num, grid, decimals):
     checks = []
     i = 0
     coefficient=1
